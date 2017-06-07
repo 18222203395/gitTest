@@ -3,6 +3,8 @@ package com.ym.prox.modules;
 public class User {
 	
 	//this is a git test
+
+
     private Integer sid;
 
     private String userName;

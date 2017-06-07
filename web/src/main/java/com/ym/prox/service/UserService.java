@@ -10,6 +10,7 @@ import java.util.Map;
  */
 public interface UserService {
 
+
     public void insert(User user);
 
     public List<User> select(Map<String,Object> param);
