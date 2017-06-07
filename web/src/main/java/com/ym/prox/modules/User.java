@@ -1,20 +1,26 @@
 package com.ym.prox.modules;
 
-/**
- * Created by y64195 on 2017/6/6.
- */
 public class User {
+    private Integer sid;
 
     private String userName;
 
     private String passWord;
+
+    public Integer getSid() {
+        return sid;
+    }
+
+    public void setSid(Integer sid) {
+        this.sid = sid;
+    }
 
     public String getUserName() {
         return userName;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.userName = userName == null ? null : userName.trim();
     }
 
     public String getPassWord() {
@@ -22,6 +28,6 @@ public class User {
     }
 
     public void setPassWord(String passWord) {
-        this.passWord = passWord;
+        this.passWord = passWord == null ? null : passWord.trim();
     }
 }

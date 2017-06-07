@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ym.prox.modules.User" >
+  <resultMap id="BaseResultMap" type="com.ym.prox.modules.User" >
+    <id column="sid" property="sid" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="pass_word" property="passWord" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    sid, user_name, pass_word
+  </sql>
+
+  <insert id="insert" parameterType="com.ym.prox.modules.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sid != null" >
+        sid,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="passWord != null" >
+        pass_word,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sid != null" >
+        #{sid,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="passWord != null" >
+        #{passWord,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="find" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT * FROM user WHERE 1 = 1
+    <if test="sid != null" >
+      AND sid = #{sid,jdbcType=INTEGER}
+    </if>
+    <if test="userName != null" >
+      AND userName = #{userName,jdbcType=VARCHAR}
+    </if>
+    <if test="passWord != null" >
+      AND passWord = #{passWord,jdbcType=VARCHAR}
+    </if>
+  </select>
+
+</mapper>
