@@ -7,6 +7,11 @@
 
     <context:property-placeholder location="classpath:mybatis" />
 
+    <!-- 以下是使用反射机制要配置的一些bean -->
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="typeAliasesPackage" value="com.ym.prox" />

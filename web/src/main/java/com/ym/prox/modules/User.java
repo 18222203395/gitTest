@@ -1,9 +1,8 @@
 package com.ym.prox.modules;
 
-public class User {
-	
-	//this is a git test
+import com.ym.prox.common.entity.BaseEntity;
 
+public class User extends BaseEntity{
 
     private Integer sid;
 
