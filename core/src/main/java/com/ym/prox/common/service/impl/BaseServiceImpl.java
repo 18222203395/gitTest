@@ -44,7 +44,7 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
     public BaseDao<T> getGenericBaseDao(){
         if(baseDao == null){
             if(baseDaoBeanId != null){
-                baseDao = (BaseDao<T>) ApplicationContextGet.applicationContext.getBean(baseDaoBeanId);
+                baseDao = (BaseDao<T>) ApplicationContextGet.findBean(baseDaoBeanId);
             }
         }
         return baseDao;
@@ -74,4 +74,5 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
     public List<T> findByParams(Map<String, Object> params) {
         return getGenericBaseDao().findByParams(params);
     }
+
 }

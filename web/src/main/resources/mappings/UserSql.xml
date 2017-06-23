@@ -49,4 +49,8 @@
     </if>
   </select>
 
+  <select id="findAll" resultMap="BaseResultMap">
+    SELECT * FROM user WHERE 1 = 1
+  </select>
+
 </mapper>

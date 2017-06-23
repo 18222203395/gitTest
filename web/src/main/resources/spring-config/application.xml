@@ -8,6 +8,4 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <bean id="applicationContextGet" class="com.ym.prox.common.util.ApplicationContextGet" />
-
 </beans>

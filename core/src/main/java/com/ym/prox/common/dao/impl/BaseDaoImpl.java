@@ -24,26 +24,26 @@ public class BaseDaoImpl<T extends BaseEntity> implements BaseDao<T>{
     }
 
     public int insert(T entity) {
-        return sessionTemplate.insert(entityClass + PRE_INSERT, entity);
+        return sessionTemplate.insert(entityClass.getName() + PRE_INSERT, entity);
     }
 
     public int update(T entity) {
-        return sessionTemplate.insert(entityClass + PRE_UPDATE, entity);
+        return sessionTemplate.insert(entityClass.getName() + PRE_UPDATE, entity);
     }
 
     public int delete(T entity) {
-        return sessionTemplate.insert(entityClass + PRE_DELETE, entity);
+        return sessionTemplate.insert(entityClass.getName() + PRE_DELETE, entity);
     }
 
     public T findOne(Map<String, Object> params) {
-        return sessionTemplate.selectOne(entityClass  + PRE_FIND, params);
+        return sessionTemplate.selectOne(entityClass.getName()  + PRE_FIND, params);
     }
 
     public List<T> findAll() {
-        return sessionTemplate.selectList(entityClass + PRE_FIND_ALL);
+        return sessionTemplate.selectList(entityClass.getName() + PRE_FIND_ALL);
     }
 
     public List<T> findByParams(Map<String, Object> params) {
-        return sessionTemplate.selectOne(entityClass + PRE_FIND,params);
+        return sessionTemplate.selectOne(entityClass.getName() + PRE_FIND,params);
     }
 }

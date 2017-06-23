@@ -8,15 +8,15 @@ import java.util.Map;
  */
 public interface BaseDao<T> {
 
-    public static final String PRE_INSERT = "insert";
+    public static final String PRE_INSERT = ".insert";
 
-    public static final String PRE_UPDATE = "update";
+    public static final String PRE_UPDATE = ".update";
 
-    public static final String PRE_DELETE = "delete";
+    public static final String PRE_DELETE = ".delete";
 
-    public static final String PRE_FIND = "find";
+    public static final String PRE_FIND = ".find";
 
-    public static final String PRE_FIND_ALL = "findAll";
+    public static final String PRE_FIND_ALL = ".findAll";
 
 
     public int insert(T entity);
