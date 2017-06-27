@@ -1,2 +1,2 @@
 # gitTest
-this is the first test for me about git
+i want a 'SSM' framwork with shiro、redis。
