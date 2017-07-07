@@ -42,10 +42,10 @@
       AND sid = #{sid,jdbcType=INTEGER}
     </if>
     <if test="userName != null" >
-      AND userName = #{userName,jdbcType=VARCHAR}
+      AND user_name = #{userName,jdbcType=VARCHAR}
     </if>
     <if test="passWord != null" >
-      AND passWord = #{passWord,jdbcType=VARCHAR}
+      AND pass_word = #{passWord,jdbcType=VARCHAR}
     </if>
   </select>
 
